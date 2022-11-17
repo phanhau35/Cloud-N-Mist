@@ -15,13 +15,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manager</title>
+        <title>Products Manager</title>
     </head>
     <body>
         <div class="container">
-            <table class="table">
+            <table class="table" id="table">
                 <thead>
-                    <tr class="">
+                    <tr class="table-info">
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Type</th>
@@ -32,15 +32,28 @@
                 </thead>
                 <tbody>
                     <%
+                        String btn = "";
                         List<Products> productList = ProductsDAO.getPrList();
                         for (Products product : productList) {
+                            if (product.getStatus().equals("available")) {
+                                btn = "disable";
+                            } else {
+                                btn = "enable";
+                            }
                             out.println("<tr class=\"product-detail\">");
                             out.println("<th>" + product.getId() + "</td>");
                             out.println("<td>" + product.getName() + "</td>");
-                            out.println("<td>" + product.getTypeID() + "</td>                        ");
+                            out.println("<td>" + product.getTypeID() + "</td>");
                             out.println("<td>" + product.getDes() + "</td>");
                             out.println("<td>" + product.getPrice() + "</td>");
-                            out.println("<td>" + product.getStatus() + "</td></tr>");
+                            out.println("<td>" + product.getStatus() + "</td>");
+                            out.println("<td class=\"action-form\">"
+                                    + "<span><form  method=\"post\" action=\"ProductsController\">");
+                            out.println("   <input type=\"hidden\" name=\"id\" value=\"" + product.getId() + "\" />");
+                            out.println("   <button type=\"submit\" name=\"mode\" value=\"update\">Update</button>");
+                            out.println("   <button type=\"submit\" name=\"mode\" value=\"disable\">" + btn + "</button>");
+                            out.println("</form></span>");
+                            out.println("</tr>");
                         }
                     %>
                 </tbody>

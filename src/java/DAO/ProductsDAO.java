@@ -67,4 +67,26 @@ public class ProductsDAO {
         return product;
     }
 
+    public static void disable(int id) throws SQLException, ClassNotFoundException {
+        try {
+            int status = 1;
+            DB_Connection db_con = new DB_Connection();
+            Connection con = db_con.getConnection();
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("select Status from `toyshop`.`products` where ProductID =" + id);
+            while (rs.next()) {
+                if (rs.getInt("Status") == 1) {
+                    status = 0;
+                }
+            }
+            String sql = "UPDATE `toyshop`.`products` SET Status = " + status + " WHERE ProductID = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            con.close();
+        } catch (Exception e) {
+        }
+
+    }
+
 }

@@ -71,14 +71,12 @@ public class ProductTypeDAO {
 
     public static String getProductTypeDetail(int id,String findWhat) throws SQLException, ClassNotFoundException {
         try {
-            System.out.println(id);
             String typeName = "REEEEEEEEEEEEE";
             DB_Connection db_con = new DB_Connection();
             Connection con = db_con.getConnection();
             String sql = "SELECT * FROM `toyshop`.`product_type` where typeID = ?;";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
-            System.out.println(ps);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 typeName = rs.getString(findWhat);

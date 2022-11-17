@@ -84,6 +84,15 @@
         <servlet-name>ProductDetail</servlet-name>
         <url-pattern>/Admin/ProductDetail</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ProductsController</servlet-name>
+        <servlet-class>Controller.ProductsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductsController</servlet-name>
+        <url-pattern>/Admin/ProductsController</url-pattern>
+    </servlet-mapping>
+    
     
     
     <!--User Function-->
