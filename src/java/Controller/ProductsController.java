@@ -35,11 +35,9 @@ public class ProductsController extends HttpServlet {
             String mode = request.getParameter("mode");
             String destinate = "/Admin/ProductsManager";
 
-            if (mode.equals("Add")) {
-                String name = request.getParameter("name");
-                int typeId = Integer.parseInt(request.getParameter("id"));
-                String des = request.getParameter("des");
-                int price = Integer.parseInt(request.getParameter("price"));
+            if (mode.equals("disable")) {
+                int id = Integer.parseInt(request.getParameter("id"));
+                
             }
 
         }

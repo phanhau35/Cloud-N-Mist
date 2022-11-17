@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manager</title>
+        <title>Products Manager</title>
     </head>
     <body>
         <div class="container"> 
@@ -35,7 +35,7 @@
                 </div>
                 <button type="submit" name="addBtn" value="add" class="btn btn-primary mb-2">Add</button>
             </form>
-            <table class="table" border= "1">
+            <table class="table-primary" border= "1">
                 <thead>
                     <tr class="">
                         <th scope="col">ID</th>

@@ -12,7 +12,7 @@
         <title>Cloud and Mist Store</title>
     </head>
     <body>
- 
+        <%@include file="checkLoginHeader.jsp" %>
         <h1>This is home page!</h1>
         <a href="Login">User log in</a>
         <br>

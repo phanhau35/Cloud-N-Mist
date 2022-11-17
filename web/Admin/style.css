@@ -3,10 +3,10 @@
     max-width: 1400px;
 }
 thead{
-    background-color: graytext
+    background-color: white;
 }
 thead tr:hover{
-    background-color: graytext
+    background-color: white;
 }
 
 tr:hover{
